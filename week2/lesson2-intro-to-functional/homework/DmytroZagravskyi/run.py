@@ -1,5 +1,6 @@
 from utils.task_2 import makeUppercase
 from utils.task_3 import makeLoad
+from utils.task_4 import makeFilter
 from utils.task_5 import makeStats
 from utils.task_6 import makeSort
 from utils.task_7 import makeRoman
@@ -26,19 +27,18 @@ if __name__ == "__main__":
 
     #task2
     print('\ntask 2 - uppercase')
-    for dic in members: dic['name'] = makeUppercase(dic['name'])
+    members = makeUppercase(members, 'name')
     print(members)
 
     #task3
     print('\ntask 3 - load%')
-    for dic in members: dic['load'] = str(makeLoad(dic['age']))
-    members = list(filter(lambda d: float(d['load']) < 100, members))
-
+    members = makeLoad(members)
     print(members)
 
     #task4
     print('\ntask 4 - filter by ''o''')
-    print(list(filter(lambda d: 'o' in d['name'].lower(), members)))
+    members = makeFilter(members, 'o')
+    print(members)
 
     #task5
     print('\ntask 5 - sum age, 1st/last members')
@@ -52,3 +52,4 @@ if __name__ == "__main__":
     print('\ntask 7 - roman num')
     print(makeRoman(6))
     print(makeRoman(13))
+    print(makeRoman(80000))

@@ -1,4 +1,7 @@
 def makeRoman(i_int: int) -> str:
+    if (i_int > 3999):
+        return 'Can not convert the number greater than 3999'
+
     roman_dict = [
         {'int': 1000, 'roman': 'M'},
         {'int': 900, 'roman': 'CM'},
