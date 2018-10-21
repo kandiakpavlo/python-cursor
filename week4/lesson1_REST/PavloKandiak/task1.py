@@ -58,4 +58,5 @@ def dump_members():
 if __name__ == '__main__':
     settings = json.load(open("settings.json", "r"))
     app.run(port=settings["port"], host=settings["host"], debug=settings["debug_mode"])
+    setting.close()
 
