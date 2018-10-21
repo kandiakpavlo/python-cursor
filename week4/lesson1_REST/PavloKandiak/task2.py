@@ -10,7 +10,7 @@ MEMBERS = {
 }
 
 
-def add_member(name, age, gender, id):
+def add_member(name, age, gender):
     response_data = {"jsonrpc": "2.0"}
     MEMBERS[name] = {"age": age, "name": name, "gender": gender}
     response_data["result"] = f"We add your member {MEMBERS[name]}"
